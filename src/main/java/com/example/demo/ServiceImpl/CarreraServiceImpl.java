@@ -28,20 +28,7 @@ public class CarreraServiceImpl implements CarreraService{
     
     @Override
     public List<CarreraDTO> getCarreraXEstudiantesInscriptos() {
-        List<Carrera> carreras=repository.getCarreraXEstudiantesInscriptos();
-        LinkedList<CarreraDTO> carrerasDto =  new LinkedList<>();
-        for(Carrera c: carreras){
-            LinkedList<EstudianteDTO> students = new LinkedList<>();
-            c.getEstudiantes().forEach(estudiante -> {
-                Estudiante e = estudiante.getEstudiante();
-                EstudianteDTO estudianteDTO = new EstudianteDTO(e.getNroDni(),e.getNombre(),e.getApellido()
-                    ,e.getEdad(),e.getGenero(),e.getCiudadResidencia(),e.getNroLibretaUniv(),e.getCarreras());
-                students.add(estudianteDTO);
-            });
-        CarreraDTO carreraDto = new CarreraDTO(c.getIdCarrera(), c.getNombre(), c.getDuracion(), c.getEstudiantes());
-        carrerasDto.add(carreraDto);
-        }
-     return carrerasDto;
+     return repository.getCarreraXEstudiantesInscriptos();
     }
 
     @Override

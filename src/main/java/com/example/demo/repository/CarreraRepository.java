@@ -17,5 +17,5 @@ public interface CarreraRepository extends JpaRepository<Carrera,Long>{
     + "WHERE c.estudiantes IS NOT EMPTY "
     + "GROUP BY c.nombre "
     + "ORDER BY contador DESC")
-    public List<Carrera> getCarreraXEstudiantesInscriptos();
+    public List<CarreraDTO> getCarreraXEstudiantesInscriptos();
 }
