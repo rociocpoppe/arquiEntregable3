@@ -15,12 +15,12 @@ public interface Estudiante_CarreraRepository extends JpaRepository<Estudiante_C
 
     @Query(value = "select nombre,YEAR(anio), sum(inscriptos) as inscriptos,"
     +  " sum(graduados) as graduados from"
-    +  " (SELECT c.nombre, fechaInscripcion as anio, count(estudianteId) as inscriptos,"
+    +  " (SELECT c.nombre, fecha_inscripcion as anio, count(estudiante_id) as inscriptos,"
     +  " '0' as graduados from Carrera c inner join  Estudiante_Carrera ec "
-    +  " on carreraId= c.idCarrera group by carreraId,anio union"
-    +  " SELECT c.nombre, fechaGraduacion as anio,  '0' as inscriptos, count(estudianteId) as graduados"
-    + " from Carrera c inner join  Estudiante_Carrera ec on carreraId= c.idCarrera "
-    + " where fechaGraduacion is not null group by carreraId,anio order by nombre,anio) a group by nombre, anio", nativeQuery = true)
+    +  " on carrera_id= c.id_carrera group by carrera_id,anio union"
+    +  " SELECT c.nombre, fecha_graduacion as anio,  '0' as inscriptos, count(estudiante_id) as graduados"
+    + " from Carrera c inner join  Estudiante_Carrera ec on carrera_id= c.id_carrera "
+    + " where fecha_graduacion is not null group by carrera_id,anio order by nombre,anio) a group by nombre, anio", nativeQuery = true)
    public List<Object[]> getReporte();
     
 }

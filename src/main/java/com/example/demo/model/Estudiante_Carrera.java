@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 @Entity
 @Table (name="Estudiante_Carrera")
@@ -18,7 +20,9 @@ public class Estudiante_Carrera{
     @JoinColumn (name="estudianteId")
     private Estudiante estudiante;
 
-    @ManyToOne (cascade= CascadeType.MERGE, fetch= FetchType.EAGER)
+
+    @JsonBackReference
+    @ManyToOne (cascade= CascadeType.MERGE, fetch= FetchType.LAZY)
     @JoinColumn (name="carreraId")
     private Carrera carrera;
     

@@ -28,7 +28,7 @@ public class Estudiante_CarreraController {
         return service.save(c);
     }
 
-    @GetMapping("/")
+    @GetMapping("/reporte")
     public List<Object[]> getReporte(){
         return service.getReporte();
     }

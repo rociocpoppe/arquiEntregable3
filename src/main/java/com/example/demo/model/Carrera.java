@@ -9,6 +9,8 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +27,7 @@ public class Carrera {
 
     private int duracion;
 
+    @JsonManagedReference
     @OneToMany (mappedBy = "carrera",fetch= FetchType.LAZY)
     private List<Estudiante_Carrera> estudiantes;
 

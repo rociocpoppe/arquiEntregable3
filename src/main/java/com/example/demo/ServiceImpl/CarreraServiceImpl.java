@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dto.CarreraDTO;
+import com.example.demo.dto.EstudianteDTO;
 import com.example.demo.model.Carrera;
 import com.example.demo.model.Estudiante;
 import com.example.demo.repository.CarreraRepository;

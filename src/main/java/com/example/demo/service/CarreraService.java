@@ -13,7 +13,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.ServiceImpl.CarreraDTO;
+import com.example.demo.dto.CarreraDTO;
 import com.example.demo.model.Carrera;
 import com.example.demo.repository.CarreraRepository;
 

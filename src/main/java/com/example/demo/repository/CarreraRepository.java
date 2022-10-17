@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.ServiceImpl.CarreraDTO;
+import com.example.demo.dto.CarreraDTO;
 import com.example.demo.model.Carrera;
 
 @Repository("CarreraRepository")

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.ServiceImpl.CarreraDTO;
+import com.example.demo.dto.CarreraDTO;
 import com.example.demo.model.Carrera;
 import com.example.demo.repository.CarreraRepository;
 import com.example.demo.service.CarreraService;

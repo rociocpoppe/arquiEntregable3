@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table (name="Estudiante")
 public class Estudiante{
@@ -27,6 +30,8 @@ public class Estudiante{
     private String ciudadResidencia;
     @Column
     private int nroLibretaUniv;
+
+    @JsonManagedReference
     @OneToMany( mappedBy = "estudiante",fetch = FetchType.LAZY)
     private List <Estudiante_Carrera> carreras;
     
