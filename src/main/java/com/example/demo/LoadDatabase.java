@@ -46,13 +46,17 @@ class LoadDatabase {
                 cRepository.save(c);
             }
             log.info("cargados " + cRepository.count() + " carreras");
-            Estudiante e=new Estudiante((long)30, "Matías", "Perez","tandil",20,"m", 97653);
+            Estudiante e=new Estudiante((long)30, "Matías", "Perez","tandil",20,"m", 973);
             repository.save(e);
+            Estudiante e2=new Estudiante((long)50, "Vanesa", "Perez","tandil",30,"f", 553);
+            repository.save(e2);
             Carrera c=new Carrera((long)10, "arte");
             cRepository.save(c);
             Timestamp f=new Timestamp(2020-03-03);
             Estudiante_Carrera ec=new Estudiante_Carrera(e, c,f , null);
+            Estudiante_Carrera ec2=new Estudiante_Carrera(e2, c,f , null);
             ecRepository.save(ec);
+            ecRepository.save(ec2);
 
 
 

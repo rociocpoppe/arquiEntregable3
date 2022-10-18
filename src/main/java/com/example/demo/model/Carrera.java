@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,10 +17,11 @@ import java.util.List;
 
 @Component
 @Entity
-@Table(name="Carrera")
+@Table(name="carrera")
 public class Carrera {
 
     @Id
+    @Column (name="idCarrera")
     private Long idCarrera;
 
     @Column
@@ -27,8 +29,9 @@ public class Carrera {
 
     private int duracion;
 
+
     @JsonManagedReference
-    @OneToMany (mappedBy = "carrera",fetch= FetchType.LAZY)
+    @OneToMany (cascade=CascadeType.ALL,mappedBy = "carrera",fetch= FetchType.LAZY)
     private List<Estudiante_Carrera> estudiantes;
 
     public Carrera(Long id,String nombre) {

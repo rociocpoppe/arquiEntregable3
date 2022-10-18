@@ -32,29 +32,29 @@ public class EstudianteServiceImpl implements EstudianteService{
         this.repository = repository;
     }
 
-    @Override
-    public List<Estudiante> getEstudiantesByCriterio( String orden){
-        System.out.println(orden);
-        List<Estudiante> lista=new ArrayList<>();
-        if (orden.equals("nombre")) {
-            return lista.stream().sorted(Comparator.comparing(Estudiante::getNombre)).collect(Collectors.toList());
-        }else if (orden.equals("apellidos")) {
+    // @Override
+    // public List<Estudiante> getEstudiantesByCriterio( String orden){
+    //     System.out.println(orden);
+    //     List<Estudiante> lista=new ArrayList<>();
+    //     if (orden.equals("nombre")) {
+    //         return lista.stream().sorted(Comparator.comparing(Estudiante::getNombre)).collect(Collectors.toList());
+    //     }else if (orden.equals("apellidos")) {
         
-        return lista.stream().sorted(Comparator.comparing(Estudiante::getApellido)).collect(Collectors.toList());
-        }else {
+    //     return lista.stream().sorted(Comparator.comparing(Estudiante::getApellido)).collect(Collectors.toList());
+    //     }else {
         
-        return lista.stream().sorted(Comparator.comparing(Estudiante::getEdad)).collect(Collectors.toList());
-        }    
-    }
-        //         public Iterable<Estudiante> getEstudiantesByCriterio(@PathParam("apellido") String nombre){
-        //         return service.getEstudiantesByCriterio(nombre);
-        //     }
-        //         return repository.getEstudiantesByCriterio(criterio);
-        // }
-        
-        
-    //     return repository.getEstudiantesByCriterio(orden);
+    //     return lista.stream().sorted(Comparator.comparing(Estudiante::getEdad)).collect(Collectors.toList());
+    //     }    
     // }
+    //     //         public Iterable<Estudiante> getEstudiantesByCriterio(@PathParam("apellido") String nombre){
+    //     //         return service.getEstudiantesByCriterio(nombre);
+    //     //     }
+    //     //         return repository.getEstudiantesByCriterio(criterio);
+    //     // }
+        
+        
+    // //     return repository.getEstudiantesByCriterio(orden);
+    // // }
     
     @Override
     public Estudiante getEstudianteByLU(int nroLibretaUniv) {
@@ -66,10 +66,7 @@ public class EstudianteServiceImpl implements EstudianteService{
         return repository.getEstudiantesByGenero(genero);
     }
 
-    @Override
-    public List<Estudiante> getEstudiantesByCarrera(String c, String ciudad) {
-        return repository.getEstudiantesByCarrera(c, ciudad);
-    }
+ 
 
     @Override
     public Iterable<Estudiante> findAll() {
@@ -78,11 +75,27 @@ public class EstudianteServiceImpl implements EstudianteService{
 
     @Override
     public Estudiante save(Estudiante e) {
-        return repository.save(null);
+        return repository.save(e);
     }
 
     @Override
     public Optional<Estudiante> findById(Long dni) {
         return repository.findById(dni);
+    }
+
+    public List<Estudiante> getEstudiantesByCriterio( String orden){
+        System.out.println("orden = " + orden);
+        if (orden.equals("nombre")) {
+            return repository.getEstudiantesByCriterioNombre();
+        }else  if (orden.equals("apellido")) {
+            return repository.getEstudiantesByCriterioApellido();
+        }else {
+            return repository.getEstudiantesByCriterioEdad();
+        }
+    }
+
+    @Override
+    public List<Estudiante> getEstudiantesByCarrera(String c, String ciudad) {
+        return repository.getEstudiantesByCarrera(c, ciudad);
     }
 }

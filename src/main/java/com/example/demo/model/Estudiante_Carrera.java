@@ -5,24 +5,27 @@ import java.util.Optional;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.OnDelete;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 
 @Entity
-@Table (name="Estudiante_Carrera")
+@Table (name="estudiante_carrera")
 public class Estudiante_Carrera{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id ;
 
-    @ManyToOne(cascade = CascadeType.MERGE, fetch= FetchType.EAGER)
+    @JsonBackReference
+    @ManyToOne(cascade = CascadeType.MERGE, fetch= FetchType.LAZY)
     @JoinColumn (name="estudianteId")
     private Estudiante estudiante;
 
-
+    
     @JsonBackReference
-    @ManyToOne (cascade= CascadeType.MERGE, fetch= FetchType.LAZY)
+    @ManyToOne (fetch= FetchType.LAZY)
     @JoinColumn (name="carreraId")
     private Carrera carrera;
     

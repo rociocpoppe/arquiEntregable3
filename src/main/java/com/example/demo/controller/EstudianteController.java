@@ -76,12 +76,11 @@ public class EstudianteController {
         return service.getEstudiantesByGenero(genero);
     }
 
-
-    //no tira error pero trae vacio cuando deberia tener algo
     @GetMapping("/ciudadCarrera/{carrera}/{ciudadResidencia}")
     public Iterable<Estudiante> getEstudiantesByCarrera(@PathVariable String carrera, @PathVariable String ciudadResidencia){
         return service.getEstudiantesByCarrera(carrera, ciudadResidencia);
     }
+  
     
     @PostMapping("/")
     public Estudiante addEstudiante(@RequestBody Estudiante e){
@@ -89,4 +88,17 @@ public class EstudianteController {
     }
 
     
+    @GetMapping("/ordenadoPorApellido/{apellido}")
+     public Iterable<Estudiante> getEstudiantesByApellido(@PathVariable("apellido") String apellido){
+        System.out.println("apellido ?= " + apellido);
+         return service.getEstudiantesByCriterio(apellido);
+     }
+    @GetMapping("/ordenadoPorNombre/{nombre}")
+    public Iterable<Estudiante> getEstudiantesByNombre(@PathVariable("nombre") String nombre){
+        return service.getEstudiantesByCriterio(nombre);
+    }
+    @GetMapping("/ordenadoPorEdad/{edad}")
+    public Iterable<Estudiante> getEstudiantesByEdad(@PathVariable("edad") String edad){
+        return service.getEstudiantesByCriterio(edad);
+    }
 }

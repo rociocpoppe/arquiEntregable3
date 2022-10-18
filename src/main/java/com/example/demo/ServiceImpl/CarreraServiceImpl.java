@@ -1,5 +1,6 @@
 package com.example.demo.ServiceImpl;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import com.example.demo.dto.CarreraDTO;
 import com.example.demo.dto.EstudianteDTO;
 import com.example.demo.model.Carrera;
 import com.example.demo.model.Estudiante;
+import com.example.demo.model.Estudiante_Carrera;
 import com.example.demo.repository.CarreraRepository;
 import com.example.demo.service.CarreraService;
 
@@ -26,9 +28,23 @@ public class CarreraServiceImpl implements CarreraService{
         this.repository = repository;
     }
     
+        
     @Override
     public List<CarreraDTO> getCarreraXEstudiantesInscriptos() {
-     return repository.getCarreraXEstudiantesInscriptos();
+        List<Carrera> car=repository.getCarreraXEstudiantesInscriptos();
+        List<CarreraDTO> carrerasDTO = new ArrayList<>();
+        car.forEach(c->{
+            List<EstudianteDTO>estudiantes=new ArrayList<>();
+            c.getEstudiantes().forEach(estudiante->{
+                Estudiante e = estudiante.getEstudiante();
+                EstudianteDTO estudianteDTO = new EstudianteDTO(e.getNroDni(),e.getNombre(),e.getApellido()
+                    ,e.getEdad(),e.getGenero(),e.getCiudadResidencia(),e.getNroLibretaUniv(),e.getCarreras());
+                estudiantes.add(estudianteDTO);
+            });
+            CarreraDTO carreraDto = new CarreraDTO(c.getIdCarrera(),c.getNombre(), c.getDuracion(), c.getEstudiantes().size());
+            carrerasDTO.add(carreraDto);
+        });         
+     return carrerasDTO;
     }
 
     @Override
@@ -40,5 +56,5 @@ public class CarreraServiceImpl implements CarreraService{
     public List<Carrera> findAll() {
         return repository.findAll();
     }
-    
+
 }

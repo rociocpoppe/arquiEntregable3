@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.model.Carrera;
+import com.example.demo.model.Estudiante;
 import com.example.demo.model.Estudiante_Carrera;
 import com.example.demo.repository.Estudiante_CarreraRepository;
 import com.example.demo.service.Estudiante_CarreraService;
@@ -34,6 +36,11 @@ public class Estudiante_CarreraServiceImpl implements Estudiante_CarreraService{
         return repository.save(c);
     }
 
+    // @Override
+    // public List<Estudiante> getEstudiantesByCarrera(String c, String ciudad) {
+    //     return repository.getEstudiantesByCarrera(c, ciudad);
+    // }
+ 
 
    
     

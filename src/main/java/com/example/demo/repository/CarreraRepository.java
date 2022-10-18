@@ -6,16 +6,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.dto.CarreraDTO;
+import com.example.demo.dto.EstudianteDTO;
 import com.example.demo.model.Carrera;
+import com.example.demo.model.Estudiante;
 
 @Repository("CarreraRepository")
 public interface CarreraRepository extends JpaRepository<Carrera,Long>{
 
-    @Query("SELECT c.nombre,count(e) as contador FROM Carrera c "
-    + "JOIN c.estudiantes e "
-    + "WHERE c.estudiantes IS NOT EMPTY "
-    + "GROUP BY c.nombre "
-    + "ORDER BY contador DESC")
-    public List<CarreraDTO> getCarreraXEstudiantesInscriptos();
+
+    //funciona
+    @Query("SELECT DISTINCT c FROM Carrera c JOIN c.estudiantes s WHERE size(s) > 0 ORDER BY size(s) DESC")
+    public List<Carrera> getCarreraXEstudiantesInscriptos();
+
 }

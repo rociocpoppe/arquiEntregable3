@@ -2,6 +2,8 @@ package com.example.demo.model;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,10 +15,11 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-@Table (name="Estudiante")
+@Table (name="estudiante")
 public class Estudiante{
 
     @Id
+    @Column(name="nroDni")
     private Long nroDni;
     @Column
     private String nombre;
@@ -26,13 +29,13 @@ public class Estudiante{
     private int edad;
     @Column
     private String genero;
-    @Column
+    @Column(name="ciudadResidencia")
     private String ciudadResidencia;
-    @Column
+    @Column(name="nroLibretaUniv")
     private int nroLibretaUniv;
 
     @JsonManagedReference
-    @OneToMany( mappedBy = "estudiante",fetch = FetchType.LAZY)
+    @OneToMany (cascade=CascadeType.ALL,mappedBy = "estudiante",fetch = FetchType.LAZY)
     private List <Estudiante_Carrera> carreras;
     
    
