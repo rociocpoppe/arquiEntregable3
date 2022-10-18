@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.EstudianteDTO;
+import com.example.demo.dto.MatriculacionDTO;
 import com.example.demo.model.Carrera;
 import com.example.demo.model.Estudiante;
 import com.example.demo.model.Estudiante_Carrera;
@@ -32,13 +34,8 @@ public class Estudiante_CarreraController {
     }
 
     @PostMapping("/")
-    public Estudiante_Carrera matricularEstudiante(Estudiante_Carrera ec){
-        return service.save(ec);
+    public EstudianteDTO matricularEstudiante(@RequestBody MatriculacionDTO matriculacion){
+        return service.matricular(matriculacion);
     }
-  
-      //no tira error pero trae vacio cuando deberia tener algo
-    //   @GetMapping("/ciudadCarrera/{carrera}/{ciudadResidencia}")
-    //   public Iterable<Estudiante> getEstudiantesByCarrera(@PathVariable String carrera, @PathVariable String ciudadResidencia){
-    //       return service.getEstudiantesByCarrera(carrera, ciudadResidencia);
-    //   }
+    
 }
