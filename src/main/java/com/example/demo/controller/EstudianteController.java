@@ -8,9 +8,11 @@ import java.util.Optional;
 
 import javax.websocket.server.PathParam;
 
+import com.example.demo.dto.EstudianteDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.repository.query.Param;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,12 +52,7 @@ public class EstudianteController {
     }
         
 
-    //no funcionaaaa    
-    //@GetMapping("/apellido/{apellido}")
-    // public Iterable<Estudiante> getEstudiantesByCriterio(@PathParam("apellido") String nombre){
-    //     return service.getEstudiantesByCriterio(nombre);
-    // }
-
+/*
    @RequestMapping(value ="/criterio" , params="orden",method = RequestMethod.GET, produces = "application/json")
    @ResponseBody 
    //@GetMapping("/criterio")
@@ -63,6 +60,7 @@ public class EstudianteController {
         System.out.println("este es el param " + cr);
         return service.getEstudiantesByCriterio(cr);
     }
+*/
 
     //funciona
     @GetMapping("/lu/{lu}")
@@ -83,9 +81,16 @@ public class EstudianteController {
   
     
     @PostMapping("/")
-    public Estudiante addEstudiante(@RequestBody Estudiante e){
+   //@RequestMapping(method = RequestMethod.POST, produces = "application/json;charset=utf-8", consumes = "application/json;charset=utf-8")
+    public EstudianteDTO addEstudiante(@RequestBody Estudiante e){
         return service.save(e);
     }
+
+  /*  @RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+    public EstudianteDTO addEstudiante(@RequestBody EstudianteDTO estudiante){
+        System.out.println("POST" + estudiante);
+        return service.save(estudiante);
+    }*/
 
     
     @GetMapping("/ordenadoPorApellido/{apellido}")

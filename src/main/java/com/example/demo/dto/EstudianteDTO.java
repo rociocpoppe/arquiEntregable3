@@ -16,7 +16,8 @@ public class EstudianteDTO {
     private int nroLibretaUniv;
     private List <Estudiante_Carrera> carreras;
     
-    public EstudianteDTO(Long nroDni, String nombre, String apellido, int edad, String genero, String ciudadResidencia,
+    public EstudianteDTO(Long nroDni, String nombre, String apellido,
+    String ciudadResidencia, int edad, String genero, 
             int nroLibretaUniv, List<Estudiante_Carrera> carreras) {
         this.nroDni = nroDni;
         this.nombre = nombre;
@@ -27,6 +28,28 @@ public class EstudianteDTO {
         this.nroLibretaUniv = nroLibretaUniv;
         this.carreras = carreras;
     }
+
+
+    
+    public EstudianteDTO(Long nroDni, String nombre, String apellido, int edad) {
+        this.nroDni = nroDni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+
+    public EstudianteDTO(Long nroDni, String nombre, String apellido, String ciudadResidencia,int edad, String genero, 
+            int nroLibretaUniv) {
+        this.nroDni = nroDni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.genero = genero;
+        this.ciudadResidencia = ciudadResidencia;
+        this.nroLibretaUniv = nroLibretaUniv;
+    }
+
+
 
     public Long getNroDni() {
         return nroDni;

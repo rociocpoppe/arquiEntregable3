@@ -4,10 +4,14 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -18,9 +22,11 @@ import java.util.List;
 @Component
 @Entity
 @Table(name="carrera")
-public class Carrera {
+public class Carrera{
+
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name="idCarrera")
     private Long idCarrera;
 
@@ -32,19 +38,30 @@ public class Carrera {
 
     @JsonManagedReference
     @OneToMany (cascade=CascadeType.ALL,mappedBy = "carrera",fetch= FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Estudiante_Carrera> estudiantes;
 
-    public Carrera(Long id,String nombre) {
+    public Carrera(Long id,String nombre, ArrayList<Estudiante_Carrera>estudiantes) {
         this.idCarrera=id;
         this.nombre = nombre;
-        this.estudiantes=new ArrayList<Estudiante_Carrera>();
+        this.estudiantes=new ArrayList<Estudiante_Carrera>(estudiantes);
     }
 
-    public Carrera() {
-
+    public Carrera(Long idCarrera, String nombre, int duracion) {
+        this.idCarrera = idCarrera;
+        this.nombre = nombre;
+        this.duracion = duracion;
     }
 
+    public Carrera(Long idCarrera, String nombre) {
+        this.idCarrera = idCarrera;
+        this.nombre = nombre;
+    }
 
+    public Carrera(){
+
+    }
+    
     public Long getIdCarrera() {
         return idCarrera;
     }
@@ -76,11 +93,5 @@ public class Carrera {
          return new ArrayList<Estudiante_Carrera>(estudiantes);
     }
 
-    //  public void addEstudiante(Estudiante estudiante) {
-    //     Estudiante_Carrera e= new Estudiante_Carrera(estudiante, this);
-    //     this.estudiantes.add(e);
-    //     estudiante.getCarreras().add(e);
-    // }
-    
     
 }

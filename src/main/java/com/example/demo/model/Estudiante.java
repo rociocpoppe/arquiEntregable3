@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,18 +8,26 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table (name="estudiante")
-public class Estudiante{
+public class Estudiante {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="nroDni")
     private Long nroDni;
     @Column
@@ -34,12 +43,14 @@ public class Estudiante{
     @Column(name="nroLibretaUniv")
     private int nroLibretaUniv;
 
-    @JsonManagedReference
-    @OneToMany (cascade=CascadeType.ALL,mappedBy = "estudiante",fetch = FetchType.LAZY)
+    @JsonIgnore
+    @OneToMany (cascade=CascadeType.MERGE,mappedBy = "estudiante",fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List <Estudiante_Carrera> carreras;
     
    
-    public Estudiante(Long nroDni, String nombre, String apellido,  String ciudadResidencia,int edad, String genero,
+    public Estudiante(Long nroDni, String nombre, String apellido,  
+    String ciudadResidencia,int edad, String genero,
             int nroLibretaUniv) {
         this.nroDni = nroDni;
         this.nombre = nombre;
@@ -57,7 +68,23 @@ public class Estudiante{
         this.apellido = apellido;
         this.nroLibretaUniv = nroLibretaUniv;
     }
+
+
     
+    
+    public Estudiante(Long nroDni, String nombre, String apellido, 
+    String ciudadResidencia,int edad, String genero, 
+            int nroLibretaUniv, List<Estudiante_Carrera> carreras) {
+        this.nroDni = nroDni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.genero = genero;
+        this.ciudadResidencia = ciudadResidencia;
+        this.nroLibretaUniv = nroLibretaUniv;
+        this.carreras = carreras;
+    }
+
     public Estudiante(Long nroDni) {
         this.nroDni = nroDni;
     }
@@ -118,11 +145,6 @@ public class Estudiante{
         return new ArrayList<>(carreras);
     }
 
-    // public void addCarrera(Carrera carrera) {
-    //     Estudiante_Carrera cs = new Estudiante_Carrera(this, carrera);
-    //     carreras.add(cs);
-    //     carrera.getEstudiantes().add(cs);
-    // }
 
     @Override
     public String toString() {

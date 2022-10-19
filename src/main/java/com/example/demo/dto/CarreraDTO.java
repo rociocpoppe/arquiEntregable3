@@ -28,6 +28,14 @@ public class CarreraDTO {
 
 
 
+    public CarreraDTO(Long idCarrera, String nombre, int duracion) {
+        this.idCarrera = idCarrera;
+        this.nombre = nombre;
+        this.duracion = duracion;
+    }
+
+
+
     public CarreraDTO(Long idCarrera, String nombre, int duracion, List<Estudiante_Carrera> estudiantes) {
         this.idCarrera = idCarrera;
         this.nombre = nombre;

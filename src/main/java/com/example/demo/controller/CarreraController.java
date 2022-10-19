@@ -28,27 +28,14 @@ public class CarreraController {
     private CarreraService service;
 
 
-    //funciona
     @GetMapping("/")
     public List<Carrera>getCarreras(){
         return service.findAll();
     }
     
-    @GetMapping("/byInscriptos")
-    public List<CarreraDTO> getCarreraXEstudiantesInscriptos(){
-        return service.getCarreraXEstudiantesInscriptos();
-    }
-
-
-    //funciona
-    @PostMapping("/")
-    public Carrera addCarrera(@RequestBody Carrera c){
-        return service.save(c);
-    }
-
 
     @RequestMapping(value = "/byInscriptos",method = RequestMethod.GET, produces = "application/json")
-    public List<CarreraDTO> findAlCareersWithStudents(){
+    public List<CarreraDTO> getCarrerasPorInscriptos(){
       return  service.getCarreraXEstudiantesInscriptos();
     }
 }

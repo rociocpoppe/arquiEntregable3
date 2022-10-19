@@ -12,7 +12,6 @@ import com.example.demo.dto.CarreraDTO;
 import com.example.demo.dto.EstudianteDTO;
 import com.example.demo.model.Carrera;
 import com.example.demo.model.Estudiante;
-import com.example.demo.model.Estudiante_Carrera;
 import com.example.demo.repository.CarreraRepository;
 import com.example.demo.service.CarreraService;
 
@@ -38,7 +37,7 @@ public class CarreraServiceImpl implements CarreraService{
             c.getEstudiantes().forEach(estudiante->{
                 Estudiante e = estudiante.getEstudiante();
                 EstudianteDTO estudianteDTO = new EstudianteDTO(e.getNroDni(),e.getNombre(),e.getApellido()
-                    ,e.getEdad(),e.getGenero(),e.getCiudadResidencia(),e.getNroLibretaUniv(),e.getCarreras());
+                    ,e.getCiudadResidencia(),e.getEdad(),e.getGenero(),e.getNroLibretaUniv(),e.getCarreras());
                 estudiantes.add(estudianteDTO);
             });
             CarreraDTO carreraDto = new CarreraDTO(c.getIdCarrera(),c.getNombre(), c.getDuracion(), c.getEstudiantes().size());
@@ -47,10 +46,6 @@ public class CarreraServiceImpl implements CarreraService{
      return carrerasDTO;
     }
 
-    @Override
-    public Carrera save(Carrera c) {
-        return repository.save(c);
-    }
 
     @Override
     public List<Carrera> findAll() {

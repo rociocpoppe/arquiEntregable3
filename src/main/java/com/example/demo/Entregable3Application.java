@@ -9,11 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-// @EnableJpaRepositories("com.example.demo.repository")
-// @EntityScan("com.example.demo.repository.CarreraRepository")
-// @EntityScan( "EstudianteRepository")
-// @EntityScan("CarreraRepository")
-//  @EntityScan("Estudiante_CarreraRepository")
+
 
 public class Entregable3Application {
 

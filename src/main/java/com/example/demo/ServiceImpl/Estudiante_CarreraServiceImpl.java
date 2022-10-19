@@ -57,7 +57,7 @@ public class Estudiante_CarreraServiceImpl implements Estudiante_CarreraService{
             carreras.add(caDTO);
         });
         
-        return new EstudianteDTO(e.getNroDni(), e.getNombre(),e.getApellido(),e.getEdad(),e.getGenero(),e.getCiudadResidencia(),e.getNroLibretaUniv(),e.getCarreras());        
+        return new EstudianteDTO(e.getNroDni(), e.getNombre(),e.getApellido(),e.getCiudadResidencia(),e.getEdad(),e.getGenero(),e.getNroLibretaUniv(),e.getCarreras());        
     }
 
   

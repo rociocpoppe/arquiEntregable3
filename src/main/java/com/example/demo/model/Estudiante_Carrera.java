@@ -1,13 +1,14 @@
 package com.example.demo.model;
 
+
 import java.sql.Timestamp;
-import java.util.Optional;
+
 
 import javax.persistence.*;
 
-import org.hibernate.annotations.OnDelete;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 
 @Entity
@@ -19,11 +20,10 @@ public class Estudiante_Carrera{
 	private Long id ;
 
     @JsonBackReference
-    @ManyToOne(cascade = CascadeType.MERGE, fetch= FetchType.LAZY)
+    @ManyToOne( cascade = CascadeType.MERGE, fetch= FetchType.LAZY)
     @JoinColumn (name="estudianteId")
     private Estudiante estudiante;
 
-    
     @JsonBackReference
     @ManyToOne (fetch= FetchType.LAZY)
     @JoinColumn (name="carreraId")
