@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.dto.EstudianteDTO;
-import com.example.demo.model.Carrera;
 import com.example.demo.model.Estudiante;
 
 public interface EstudianteService {

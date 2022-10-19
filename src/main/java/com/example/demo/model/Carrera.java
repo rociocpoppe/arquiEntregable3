@@ -44,7 +44,7 @@ public class Carrera{
     public Carrera(Long id,String nombre, ArrayList<Estudiante_Carrera>estudiantes) {
         this.idCarrera=id;
         this.nombre = nombre;
-        this.estudiantes=new ArrayList<Estudiante_Carrera>(estudiantes);
+        this.estudiantes=estudiantes;
     }
 
     public Carrera(Long idCarrera, String nombre, int duracion) {

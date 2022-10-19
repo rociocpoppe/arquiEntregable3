@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,10 +16,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 @Entity
 @Table (name="estudiante")
@@ -59,7 +56,7 @@ public class Estudiante {
         this.genero = genero;
         this.ciudadResidencia = ciudadResidencia;
         this.nroLibretaUniv = nroLibretaUniv;
-        this.carreras=new ArrayList<Estudiante_Carrera>();
+        // this.carreras=new ArrayList<Estudiante_Carrera>();
     }
 
     public Estudiante(Long nroDni, String nombre, String apellido, int nroLibretaUniv) {
@@ -82,7 +79,7 @@ public class Estudiante {
         this.genero = genero;
         this.ciudadResidencia = ciudadResidencia;
         this.nroLibretaUniv = nroLibretaUniv;
-        this.carreras = carreras;
+        this.carreras = new ArrayList<Estudiante_Carrera>(carreras);
     }
 
     public Estudiante(Long nroDni) {

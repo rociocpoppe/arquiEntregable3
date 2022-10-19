@@ -1,5 +1,6 @@
 package com.example.demo.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.demo.model.Estudiante_Carrera;
@@ -108,11 +109,11 @@ public class EstudianteDTO {
     }
 
     public List<Estudiante_Carrera> getCarreras() {
-        return carreras;
+        return this.carreras;
     }
 
-    public void setCarreras(List<Estudiante_Carrera> carreras) {
-        this.carreras = carreras;
+    public void addCarrera(Estudiante_Carrera carrera) {
+        this.carreras.add(carrera);
     }
 
 
