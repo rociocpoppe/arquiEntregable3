@@ -21,12 +21,12 @@ public class EstudianteServiceImpl implements EstudianteService{
     
     @Autowired
     @Qualifier("EstudianteRepository")
-    private final EstudianteRepository repository;
+    private  EstudianteRepository repository;
 
     
-    public EstudianteServiceImpl(EstudianteRepository repository) {
-        this.repository = repository;
-    }
+    // public EstudianteServiceImpl(EstudianteRepository repository) {
+    //     this.repository = repository;
+    // }
     
     @Override
     public Estudiante getEstudianteByLU(int nroLibretaUniv) {

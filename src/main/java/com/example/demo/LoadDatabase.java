@@ -7,16 +7,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.example.demo.repository.CarreraRepository;
 import com.example.demo.repository.EstudianteRepository;
-import com.example.demo.repository.Estudiante_CarreraRepository;
+import com.example.demo.repository.EstudianteCarreraRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,7 +25,7 @@ import com.example.demo.model.*;
 class LoadDatabase {
 
     @Bean
-    CommandLineRunner initDatabase(EstudianteRepository repository, CarreraRepository cRepository, Estudiante_CarreraRepository ecRepository) {
+    CommandLineRunner initDatabase(EstudianteRepository repository, CarreraRepository cRepository, EstudianteCarreraRepository ecRepository) {
         return args -> {
             for (CSVRecord row : CSVFormat.DEFAULT.withHeader().parse(new FileReader("src/main/java/com/example/demo/csv/Estudiante.csv"))) {
                 Long dni = Long.parseLong(row.get("nroDni"));

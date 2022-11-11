@@ -55,14 +55,25 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-	
-   <dependency>
-     <groupId>org.apache.commons</groupId>
-     <artifactId>commons-csv</artifactId>
-     <version>1.7</version>
-   </dependency>
- </dependencies>
+	   <dependency>
+		 <groupId>org.apache.commons</groupId>
+		 <artifactId>commons-csv</artifactId>
+		 <version>1.7</version>
+	   </dependency>
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations -->
+		<dependency>
+			<groupId>io.swagger.core.v3</groupId>
+			<artifactId>swagger-annotations</artifactId>
+			<version>2.2.3</version>
+		</dependency>
 
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>

@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.stereotype.Component;
@@ -31,8 +32,9 @@ public class Carrera{
     private Long idCarrera;
 
     @Column
+    @ApiModelProperty(notes="nombre de la carrera", name="nombre", required=true, value="Tudai")
     private String nombre;
-
+    @ApiModelProperty(notes="duración de la carrera", name="duración", required=true, value="2")
     private int duracion;
 
 

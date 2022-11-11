@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import com.example.demo.model.Estudiante_Carrera;
 
-@Repository("Estudiante_CarreraRepository")
-public interface Estudiante_CarreraRepository extends JpaRepository<Estudiante_Carrera,Long>{
+@Repository("EstudianteCarreraRepository")
+public interface EstudianteCarreraRepository extends JpaRepository<Estudiante_Carrera,Long>{
 
     @Query(value = "select nombre,YEAR(anio), sum(inscriptos) as inscriptos,"
     +  " sum(graduados) as graduados from"

@@ -4,13 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.demo.model.Estudiante_Carrera;
+import io.swagger.annotations.ApiModelProperty;
 
 public class CarreraDTO {
 
+    @ApiModelProperty(notes="id de la carrera", name="idCarrera", required=true, value="2")
     private Long idCarrera;
+    @ApiModelProperty(notes="nombre de la carrera", name="nombre", required=true, value="Tudai")
     private String nombre;
+    @ApiModelProperty(notes="duración de la carrera", name="duración", required=true, value="2")
     private int duracion;
+    @ApiModelProperty(notes="cantidad de estudiantes de la carrera", name="cantidadEstudiantes", required=true, value="4")
     private int cantidadEstudiantes;
+    @ApiModelProperty(notes="lista de estudiantes de la carrera", name="estudiantes")
     private List<Estudiante_Carrera> estudiantes;
 
     public CarreraDTO(String nombre, int cantidadEstudiantes) {
