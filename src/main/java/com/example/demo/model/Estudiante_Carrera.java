@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
+import io.swagger.annotations.ApiModelProperty;
 
 
 @Entity
@@ -22,18 +22,23 @@ public class Estudiante_Carrera{
     @JsonBackReference
     @ManyToOne( cascade = CascadeType.MERGE, fetch= FetchType.LAZY)
     @JoinColumn (name="estudianteId")
+    @ApiModelProperty(notes="estudiante de estudianteCarrera", name="estudiante", required=true)
     private Estudiante estudiante;
 
     @JsonBackReference
     @ManyToOne (fetch= FetchType.LAZY)
     @JoinColumn (name="carreraId")
+    @ApiModelProperty(notes="carrera de estudianteCarrera", name="carrera", required=true)
     private Carrera carrera;
     
     @Column
+    @ApiModelProperty(notes="fecha de inscripción", name="fechaInscripción", required=true, value="12/02/2020")
 	private Timestamp fechaInscripcion;
 	@Column
+    @ApiModelProperty(notes="fecha de graduación", name="fechaGraduación", required=true, value="12/12/2022")
 	private Timestamp fechaGraduacion;
 
+    @ApiModelProperty(notes="antiguedad", name="antiguedad", required=true, value="2")
     private int antiguedad;
 
     public Estudiante_Carrera() {

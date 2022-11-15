@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -26,18 +27,25 @@ public class Estudiante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="nroDni")
+    @ApiModelProperty(notes="nro de dni del estudiante", name="nroDni", required=true, value="37888999")
     private Long nroDni;
     @Column
+    @ApiModelProperty(notes="nombre del estudiante", name="nombre", required=true, value="Susana")
     private String nombre;
     @Column
+    @ApiModelProperty(notes="apellido del estudiante", name="apellido", required=true, value="Gimenez")
     private String apellido;
     @Column
+    @ApiModelProperty(notes="edad del estudiante", name="edad", required=true, value="34")
     private int edad;
     @Column
+    @ApiModelProperty(notes="género del estudiante", name="genero", required=true, value="f")
     private String genero;
     @Column(name="ciudadResidencia")
+    @ApiModelProperty(notes="ciudad de residencia del estudiante", name="ciudadResidencia", required=true, value="Tandil")
     private String ciudadResidencia;
     @Column(name="nroLibretaUniv")
+    @ApiModelProperty(notes="número de libreta universitaria del estudiante", name="nrLibretaUniv", required=true, value="12034")
     private int nroLibretaUniv;
 
     @JsonIgnore

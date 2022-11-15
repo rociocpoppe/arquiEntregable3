@@ -16,24 +16,26 @@ import com.example.demo.model.Estudiante;
 import com.example.demo.model.Estudiante_Carrera;
 import com.example.demo.repository.CarreraRepository;
 import com.example.demo.repository.EstudianteRepository;
-import com.example.demo.repository.Estudiante_CarreraRepository;
-import com.example.demo.service.Estudiante_CarreraService;
+import com.example.demo.repository.EstudianteCarreraRepository;
+import com.example.demo.service.EstudianteCarreraService;
 
-@Service ("Estudiante_CarreraService")
-public class Estudiante_CarreraServiceImpl implements Estudiante_CarreraService{
+@Service ("EstudianteCarreraService")
+public class EstudianteCarreraServiceImpl implements EstudianteCarreraService {
     
     @Autowired 
-    @Qualifier("Estudiante_CarreraRepository")
-    private final Estudiante_CarreraRepository repository;
-    private final EstudianteRepository estudianteRepository;
-    private final CarreraRepository carreraRepository;
+    @Qualifier("EstudianteCarreraRepository")
+    private EstudianteCarreraRepository repository;
+    @Autowired 
+    private  EstudianteRepository estudianteRepository;
+    @Autowired 
+    private  CarreraRepository carreraRepository;
 
-    public Estudiante_CarreraServiceImpl( @Qualifier("Estudiante_CarreraRepository") Estudiante_CarreraRepository repository, 
-        @Qualifier("CarreraRepository") CarreraRepository carreraRepository, @Qualifier("EstudianteRepository") EstudianteRepository estudianteRepository ) {
-        this.repository = repository;
-        this.estudianteRepository=estudianteRepository;
-        this.carreraRepository=carreraRepository;
-    }
+    // public EstudianteCarreraServiceImpl( @Qualifier("EstudianteCarreraRepository") EstudianteCarreraRepository repository,
+    //     @Qualifier("CarreraRepository") CarreraRepository carreraRepository, @Qualifier("EstudianteRepository") EstudianteRepository estudianteRepository ) {
+    //     this.repository = repository;
+    //     this.estudianteRepository=estudianteRepository;
+    //     this.carreraRepository=carreraRepository;
+    // }
 
  
     @Override

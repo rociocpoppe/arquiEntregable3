@@ -4,17 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.demo.model.Estudiante_Carrera;
+import io.swagger.annotations.ApiModelProperty;
 
 public class EstudianteDTO {
 
 
+    @ApiModelProperty(notes="número de documento del estudiante", name="nroDni", required=true, value="378888999")
     private Long nroDni;
+    @ApiModelProperty(notes="nombre del estudiante", name="nombre", required=true, value="Susana")
     private String nombre;
+    @ApiModelProperty(notes="apellido del estudiante", name="apellido", required=true, value="Gimenez")
     private String apellido;
+    @ApiModelProperty(notes="edad del estudiante", name="edad", required=true, value="34")
     private int edad;
+    @ApiModelProperty(notes="género del estudiante", name="genero", required=true, value="f")
     private String genero;
+    @ApiModelProperty(notes="ciudad de residencia del estudiante", name="ciudadResidencia", required=true, value="Tandil")
     private String ciudadResidencia;
+    @ApiModelProperty(notes="número de libreta universitaria del estudiante", name="nrLibretaUniv", required=true, value="12034")
     private int nroLibretaUniv;
+    @ApiModelProperty(notes="carreras del estudiante", name="carreras")
     private List <Estudiante_Carrera> carreras;
     
     public EstudianteDTO(Long nroDni, String nombre, String apellido,

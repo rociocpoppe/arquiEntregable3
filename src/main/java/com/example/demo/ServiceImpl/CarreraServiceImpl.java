@@ -17,12 +17,12 @@ public class CarreraServiceImpl implements CarreraService{
 
     @Autowired
     @Qualifier("CarreraRepository")
-    private final CarreraRepository repository;
+    private CarreraRepository repository;
 
 
-    public CarreraServiceImpl(@Qualifier("CarreraRepository")CarreraRepository repository) {
-        this.repository = repository;
-    }
+    // public CarreraServiceImpl(@Qualifier("CarreraRepository")CarreraRepository repository) {
+    //     this.repository = repository;
+    // }
     
         
     @Override

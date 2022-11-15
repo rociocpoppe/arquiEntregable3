@@ -6,7 +6,7 @@ import com.example.demo.dto.EstudianteDTO;
 import com.example.demo.dto.MatriculacionDTO;
 
 
-public interface Estudiante_CarreraService {
+public interface EstudianteCarreraService {
     
     public abstract List<Object[]> getReporte();
 
