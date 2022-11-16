@@ -48,20 +48,20 @@ public class Estudiante_CarreraController {
     }
 
     @PostMapping("/")
-//    @Operation(
-//            summary = "Matricula un estudiante a una carrera",
-//            description = "Servicio encargado de matricular un estudiante a una carrera",
-//            tags = { "EstudianteCarreraController" },
-//            responses = {
-//                    @ApiResponse(
-//                            description = "Success",
-//                            responseCode = "200",
-//                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = EstudianteDTO.class))
-//                    ),
-//                    @ApiResponse(description = "Not found", responseCode = "404", content = @Content),
-//                    @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
-//            }
-//    )
+   @Operation(
+           summary = "Matricula un estudiante a una carrera",
+           description = "Servicio encargado de matricular un estudiante a una carrera",
+           tags = { "EstudianteCarreraController" },
+           responses = {
+                   @ApiResponse(
+                           description = "Success",
+                           responseCode = "200",
+                           content = @Content(mediaType = "application/json", schema = @Schema(implementation = EstudianteDTO.class))
+                   ),
+                   @ApiResponse(description = "Not found", responseCode = "404", content = @Content),
+                   @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
+           }
+   )
     public EstudianteDTO matricularEstudiante(@RequestBody MatriculaDto matriculation){
         return service.matricular(matriculation);
     }
