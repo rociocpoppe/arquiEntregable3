@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.CarreraDTO;
 import com.example.demo.dto.EstudianteDTO;
-import com.example.demo.dto.MatriculacionDTO;
+import com.example.demo.dto.MatriculaDto;
 import com.example.demo.model.Carrera;
 import com.example.demo.model.Estudiante;
 import com.example.demo.model.Estudiante_Carrera;
@@ -45,11 +45,9 @@ public class EstudianteCarreraServiceImpl implements EstudianteCarreraService {
 
 
     @Override
-    public EstudianteDTO matricular(MatriculacionDTO matriculacion) {
+    public EstudianteDTO matricular(MatriculaDto matriculacion) {
         Estudiante e=estudianteRepository.getById(matriculacion.getIdEstudiante());
-        System.out.println(e.getNroDni());
         Carrera c= carreraRepository.getById(matriculacion.getIdCarrera());
-        System.out.println(c.getIdCarrera());
         repository.save(new Estudiante_Carrera(e,c));
         e=estudianteRepository.getById(matriculacion.getIdEstudiante());
         List<CarreraDTO>carreras=new ArrayList<>();
@@ -59,7 +57,7 @@ public class EstudianteCarreraServiceImpl implements EstudianteCarreraService {
             carreras.add(caDTO);
         });
         
-        return new EstudianteDTO(e.getNroDni(), e.getNombre(),e.getApellido(),e.getCiudadResidencia(),e.getEdad(),e.getGenero(),e.getNroLibretaUniv(),e.getCarreras());        
+        return new EstudianteDTO(e.getNroDni(), e.getNombre(),e.getApellido(),e.getEdad());
     }
 
   

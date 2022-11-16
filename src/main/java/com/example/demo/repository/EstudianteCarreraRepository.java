@@ -9,14 +9,14 @@ import com.example.demo.model.Estudiante_Carrera;
 @Repository("EstudianteCarreraRepository")
 public interface EstudianteCarreraRepository extends JpaRepository<Estudiante_Carrera,Long>{
 
-    @Query(value = "select nombre,YEAR(anio), sum(inscriptos) as inscriptos,"
-    +  " sum(graduados) as graduados from"
-    +  " (SELECT c.nombre, fecha_inscripcion as anio, count(estudiante_id) as inscriptos,"
-    +  " '0' as graduados from carrera c inner join  estudiante_carrera ec "
-    +  " on carrera_id= c.id_carrera group by carrera_id,anio union"
-    +  " SELECT c.nombre, fecha_graduacion as anio,  '0' as inscriptos, count(estudiante_id) as graduados"
-    + " from carrera c inner join  estudiante_carrera ec on carrera_id= c.id_carrera "
-    + " where fecha_graduacion is not null group by carrera_id,anio order by nombre,anio) a group by nombre, anio", nativeQuery = true)
+    @Query(value = "select nombre, anio, sum(inscriptos) as inscriptos,\n" +
+            "    sum(graduados) as graduados from\n" +
+            " (SELECT c.nombre, EXTRACT(YEAR FROM fecha_inscripcion) as anio, count(estudiante_id) as inscriptos,\n" +
+            "     '0' as graduados from carrera c inner join  estudiante_carrera ec\n" +
+            "     on carrera_id= c.id_carrera group by carrera_id,anio, c.nombre union\n" +
+            "     SELECT c.nombre, EXTRACT(YEAR FROM fecha_graduacion) as anio,  '0' as inscriptos, count(estudiante_id) as graduados\n" +
+            "     from carrera c inner join  estudiante_carrera ec on carrera_id= c.id_carrera\n" +
+            "     where fecha_graduacion is not null group by carrera_id,anio, c.nombre order by nombre,anio) a group by nombre, anio", nativeQuery = true)
    public List<Object[]> getReporte();
 
   

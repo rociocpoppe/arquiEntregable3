@@ -10,7 +10,7 @@ import com.example.demo.model.Carrera;
 @Repository("CarreraRepository")
 public interface CarreraRepository extends JpaRepository<Carrera,Long>{
 
-    @Query("SELECT DISTINCT c FROM Carrera c JOIN c.estudiantes s WHERE size(s) > 0 ORDER BY size(s) DESC")
+    @Query("SELECT DISTINCT c, e.size FROM Carrera c JOIN c.estudiantes e WHERE e.size > 0 ORDER BY e.size DESC")
     public List<Carrera> getCarreraXEstudiantesInscriptos();
 
 }

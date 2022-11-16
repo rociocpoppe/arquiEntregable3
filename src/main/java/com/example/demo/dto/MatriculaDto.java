@@ -1,14 +1,14 @@
 package com.example.demo.dto;
 
 
-public class MatriculacionDTO {
+public class MatriculaDto {
 
     private Long idEstudiante;
     private Long idCarrera;
 
     
 
-    public MatriculacionDTO(Long idEstudiante, Long idCarrera) {
+    public MatriculaDto(Long idEstudiante, Long idCarrera) {
         this.idEstudiante = idEstudiante;
         this.idCarrera = idCarrera;
     }

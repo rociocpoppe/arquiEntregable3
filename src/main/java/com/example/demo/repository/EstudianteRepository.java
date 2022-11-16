@@ -28,6 +28,6 @@ public interface EstudianteRepository extends JpaRepository<Estudiante, Long>{
     @Query (value="SELECT * FROM estudiante ORDER BY edad ASC", nativeQuery = true)
     public List<Estudiante> getEstudiantesByCriterioEdad();
     
-    @Query(value="select * from estudiante e join estudiante_carrera EC join carrera C on id_carrera = carrera_id where e.ciudad_residencia=:ciudadResidencia and C.nombre=:nombre", nativeQuery=true)
+    @Query("SELECT DISTINCT(e) FROM Estudiante e JOIN e.carreras c  WHERE c.carrera.nombre = :nombre AND e.ciudadResidencia = :ciudadResidencia")
     public List <Estudiante> getEstudiantesByCarrera(@Param("nombre")String c,@Param("ciudadResidencia") String ciudad);
 }
