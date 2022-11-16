@@ -2,19 +2,15 @@ package com.example.demo.dto;
 
 
 
-import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 
 public class DTOReporte implements Serializable{
 
-    @ApiModelProperty(notes="nombre de la carrera", name="c", required=true, value="Tudai")
+
     private String c;
-    @ApiModelProperty(notes="fecha", name="fecha", required=true, value="21/04/2022")
     private Integer fecha;
-    @ApiModelProperty(notes="inscriptos en la carrera", name="inscriptos", required=true, value="3")
     private double inscriptos;
-    @ApiModelProperty(notes="graduados de la carrera", name="graduados", required=true, value="2")
     private double graduados;
 
     public DTOReporte() {

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.EstudianteDTO;
 import com.example.demo.dto.MatriculacionDTO;
-import com.example.demo.service.Estudiante_CarreraService;
+import com.example.demo.service.EstudianteCarreraService;
 
 
 @RestController
@@ -25,8 +25,8 @@ import com.example.demo.service.Estudiante_CarreraService;
 public class Estudiante_CarreraController {
     
     @Autowired
-    @Qualifier("Estudiante_CarreraService")
-    private Estudiante_CarreraService service;
+    @Qualifier("EstudianteCarreraService")
+    private EstudianteCarreraService service;
 
     @GetMapping("/reporte")
     @Operation(
