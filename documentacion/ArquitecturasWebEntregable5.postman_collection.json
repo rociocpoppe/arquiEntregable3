@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "4c32a5b4-331f-461f-b637-5bd473efbf7a",
+		"name": "ArquitecturasWebEntregable5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23859574"
+	},
+	"item": [
+		{
+			"name": "https://desolate-temple-81602.herokuapp.com//estudiantes/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n        \"nroDni\": 6,\n        \"nombre\": \"Matias\",\n        \"apellido\": \"Perez\",\n        \"ciudadResidencia\": \"rauch\",\n        \"edad\": 25,\n        \"genero\": \"m\",\n        \"nroLibretaUniv\": 425,\n        \"carreras\":[]\n  } ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://desolate-temple-81602.herokuapp.com/estudiantes/",
+					"protocol": "https",
+					"host": [
+						"desolate-temple-81602",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"estudiantes",
+						""
+					]
+				},
+				"description": "Dar de alta un estudiante"
+			},
+			"response": []
+		},
+		{
+			"name": "https://desolate-temple-81602.herokuapp.com/estudiantesCarreras/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idCarrera\":4,\n    \"idEstudiante\":5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://desolate-temple-81602.herokuapp.com/estudiantesCarreras/",
+					"protocol": "https",
+					"host": [
+						"desolate-temple-81602",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"estudiantesCarreras",
+						""
+					]
+				},
+				"description": "Matricular un estudiante en una carrera"
+			},
+			"response": []
+		},
+		{
+			"name": "https://desolate-temple-81602.herokuapp.com/estudiantes/ordenadoPorNombre/nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://desolate-temple-81602.herokuapp.com/estudiantes/ordenadoPorNombre/nombre",
+					"protocol": "https",
+					"host": [
+						"desolate-temple-81602",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"estudiantes",
+						"ordenadoPorNombre",
+						"nombre"
+					]
+				},
+				"description": "Recuperar todos los estudiantes, y especificar un criterio de ordenamiento simple (ordenar por nombre)"
+			},
+			"response": []
+		},
+		{
+			"name": "https://desolate-temple-81602.herokuapp.com/estudiantes/ordenadoPorApellido/apellido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://desolate-temple-81602.herokuapp.com/estudiantes/ordenadoPorApellido/apellido",
+					"protocol": "https",
+					"host": [
+						"desolate-temple-81602",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"estudiantes",
+						"ordenadoPorApellido",
+						"apellido"
+					]
+				},
+				"description": "Recuperar todos los estudiantes, y especificar un criterio de ordenamiento simple (ordenar por apellido)"
+			},
+			"response": []
+		},
+		{
+			"name": "https://desolate-temple-81602.herokuapp.com/estudiantes/ordenadoPorEdad/edad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/estudiantes/ordenadoPorEdad/edad",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estudiantes",
+						"ordenadoPorEdad",
+						"edad"
+					]
+				},
+				"description": "Recuperar todos los estudiantes, y especificar un criterio de ordenamiento simple (ordenar por edad)"
+			},
+			"response": []
+		},
+		{
+			"name": "https://desolate-temple-81602.herokuapp.com/estudiantes/lu/333",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/estudiantes/lu/333",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estudiantes",
+						"lu",
+						"333"
+					]
+				},
+				"description": "Recuperar un estudiante en base a su número de libreta universitaria"
+			},
+			"response": []
+		},
+		{
+			"name": "https://desolate-temple-81602.herokuapp.com/estudiantes/genero/f",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/estudiantes/genero/f",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estudiantes",
+						"genero",
+						"f"
+					]
+				},
+				"description": "Recuperar todos los estudiantes en base a su género"
+			},
+			"response": []
+		},
+		{
+			"name": "https://desolate-temple-81602.herokuapp.com/carreras/byInscriptos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/carreras/byInscriptos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carreras",
+						"byInscriptos"
+					]
+				},
+				"description": "Recuperar las carreras con estudiantes inscriptos, y ordenar por cantidad de inscriptos"
+			},
+			"response": []
+		},
+		{
+			"name": "https://desolate-temple-81602.herokuapp.com/estudiantes/ciudadCarrera/tudai/tandil",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/estudiantes/ciudadCarrera/tudai/tandil",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estudiantes",
+						"ciudadCarrera",
+						"tudai",
+						"tandil"
+					]
+				},
+				"description": "Recuperar todos los estudiantes de una determinada carrera, filtrado por ciudad de residencia"
+			},
+			"response": []
+		},
+		{
+			"name": "https://desolate-temple-81602.herokuapp.com/estudiantesCarreras/reporte",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/estudiantesCarreras/reporte",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estudiantesCarreras",
+						"reporte"
+					]
+				},
+				"description": "Generar un reporte de las carreras con la información de los inscriptos, egresados por año, ordenadas alfabeticamente, por años de manera cronológica"
+			},
+			"response": []
+		}
+	]
+}
