@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "https://desolate-temple-81602.herokuapp.com//estudiantes/",
+			"name": "https://arquientregable5.herokuapp.com/estudiantes/",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -21,10 +21,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://desolate-temple-81602.herokuapp.com/estudiantes/",
+					"raw": "https://arquientregable5.herokuapp.com/estudiantes/",
 					"protocol": "https",
 					"host": [
-						"desolate-temple-81602",
+						"arquientregable5",
 						"herokuapp",
 						"com"
 					],
@@ -38,7 +38,7 @@
 			"response": []
 		},
 		{
-			"name": "https://desolate-temple-81602.herokuapp.com/estudiantesCarreras/",
+			"name": "https://arquientregable5.herokuapp.com/estudiantesCarreras/",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -69,15 +69,15 @@
 			"response": []
 		},
 		{
-			"name": "https://desolate-temple-81602.herokuapp.com/estudiantes/ordenadoPorNombre/nombre",
+			"name": "https://arquientregable5.herokuapp.com/estudiantes/ordenadoPorNombre/nombre",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://desolate-temple-81602.herokuapp.com/estudiantes/ordenadoPorNombre/nombre",
+					"raw": "https://arquientregable5.herokuapp.com/estudiantes/ordenadoPorNombre/nombre",
 					"protocol": "https",
 					"host": [
-						"desolate-temple-81602",
+						"arquientregable5",
 						"herokuapp",
 						"com"
 					],
@@ -92,15 +92,15 @@
 			"response": []
 		},
 		{
-			"name": "https://desolate-temple-81602.herokuapp.com/estudiantes/ordenadoPorApellido/apellido",
+			"name": "https://arquientregable5.herokuapp.com/estudiantes/ordenadoPorApellido/apellido",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://desolate-temple-81602.herokuapp.com/estudiantes/ordenadoPorApellido/apellido",
+					"raw": "https://arquientregable5.herokuapp.com/estudiantes/ordenadoPorApellido/apellido",
 					"protocol": "https",
 					"host": [
-						"desolate-temple-81602",
+						"arquientregable5",
 						"herokuapp",
 						"com"
 					],
@@ -115,16 +115,18 @@
 			"response": []
 		},
 		{
-			"name": "https://desolate-temple-81602.herokuapp.com/estudiantes/ordenadoPorEdad/edad",
+			"name": "https://arquientregable5.herokuapp.com/estudiantes/ordenadoPorEdad/edad",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/estudiantes/ordenadoPorEdad/edad",
+					"raw": "https://arquientregable5.herokuapp.com/estudiantes/ordenadoPorEdad/edad",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquientregable5",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"estudiantes",
 						"ordenadoPorEdad",
@@ -136,16 +138,18 @@
 			"response": []
 		},
 		{
-			"name": "https://desolate-temple-81602.herokuapp.com/estudiantes/lu/333",
+			"name": "https://arquientregable5.herokuapp.com/estudiantes/lu/333",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/estudiantes/lu/333",
+					"raw": "https://arquientregable5.herokuapp.com/estudiantes/lu/333",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquientregable5",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"estudiantes",
 						"lu",
@@ -157,16 +161,18 @@
 			"response": []
 		},
 		{
-			"name": "https://desolate-temple-81602.herokuapp.com/estudiantes/genero/f",
+			"name": "https://arquientregable5.herokuapp.com/estudiantes/genero/f",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/estudiantes/genero/f",
+					"raw": "https://arquientregable5.herokuapp.com/estudiantes/genero/f",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquientregable5",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"estudiantes",
 						"genero",
@@ -178,17 +184,18 @@
 			"response": []
 		},
 		{
-			"name": "https://desolate-temple-81602.herokuapp.com/carreras/byInscriptos",
+			"name": "https://arquientregable5.herokuapp.com/carreras/byInscriptos",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/carreras/byInscriptos",
-					"protocol": "http",
+					"raw": "https://arquientregable5.herokuapp.com/carreras/byInscriptos",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquientregable5",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"carreras",
 						"byInscriptos"
@@ -199,16 +206,18 @@
 			"response": []
 		},
 		{
-			"name": "https://desolate-temple-81602.herokuapp.com/estudiantes/ciudadCarrera/tudai/tandil",
+			"name": "https://arquientregable5.herokuapp.com/estudiantes/ciudadCarrera/tudai/tandil",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/estudiantes/ciudadCarrera/tudai/tandil",
+					"raw": "https://arquientregable5.herokuapp.com/estudiantes/ciudadCarrera/tudai/tandil",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquientregable5",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"estudiantes",
 						"ciudadCarrera",
@@ -221,16 +230,18 @@
 			"response": []
 		},
 		{
-			"name": "https://desolate-temple-81602.herokuapp.com/estudiantesCarreras/reporte",
+			"name": "https://arquientregable5.herokuapp.com/estudiantesCarreras/reporte",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/estudiantesCarreras/reporte",
+					"raw": "https://arquientregable5.herokuapp.com/estudiantesCarreras/reporte",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquientregable5",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"estudiantesCarreras",
 						"reporte"
